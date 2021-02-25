@@ -11,7 +11,6 @@ if (localStorage.getItem('listUsers')) {
    arrayUsers = JSON.parse(localStorage.getItem('listUsers'));
 }
 
-
 const render = function () {
    listUsers.textContent = '';
 
@@ -49,7 +48,7 @@ registerUser.addEventListener('click', function (event) {
 
    let nameAll = prompt('Введите через пробел Имя и Фамилию пользователя');
 
-   if (!/^[a-wа-я]*\s[a-wа-я]*$/ig.test(nameAll)) {
+   if (!/^[a-zа-я]*\s[a-zа-я]*$/ig.test(nameAll)) {
       alert('неверный формат ввода');
       return;
    } 
@@ -85,8 +84,6 @@ registerUser.addEventListener('click', function (event) {
    render();
 });
 
-
-
 login.addEventListener('click', () => {
    let loginAuto = prompt('Введите логин');
    let paswordAuto = prompt('Введите пароль');
@@ -95,7 +92,7 @@ login.addEventListener('click', () => {
    arrayUsers.forEach((item) => {
       if (loginAuto === item.login && paswordAuto === item.pasword) {
          userName.textContent = item.firstName;
-         result =true;
+         result = true;
          return;
       }
    });
